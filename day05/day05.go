@@ -3,17 +3,13 @@ package main
 import (
 	"adventOfGo2017/utils"
 	"fmt"
-	"strconv"
 	"strings"
 )
 
 func parseInput(input string) []int {
 	offsets := make([]int, 0)
 	for _, s := range strings.Fields(input) {
-		val, err := strconv.Atoi(s)
-		if err != nil {
-			panic(err)
-		}
+		val := utils.Atoi(s)
 		offsets = append(offsets, val)
 	}
 	return offsets

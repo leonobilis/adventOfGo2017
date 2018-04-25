@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"regexp"
 	"sort"
-	"strconv"
 	"strings"
 	"sync"
 )
@@ -97,10 +96,7 @@ func parseInput(input string) tower {
 	for _, s := range strings.Split(input, "\n") {
 		groups := re.FindStringSubmatch(s)
 		name := groups[1]
-		weight, err := strconv.Atoi(groups[2])
-		if err != nil {
-			panic(err)
-		}
+		weight := utils.Atoi(groups[2])
 		var children []string = nil
 		if groups[4] != "" {
 			children = strings.Split(groups[4], ", ")

@@ -3,7 +3,6 @@ package main
 import (
 	"adventOfGo2017/utils"
 	"fmt"
-	"strconv"
 	"strings"
 )
 
@@ -14,10 +13,7 @@ func p1(input string) int {
 		min = 1<<63 - 1
 		max = 0
 		for _, val := range strings.Fields(line) {
-			v, err := strconv.Atoi(val)
-			if err != nil {
-				panic(err)
-			}
+			v := utils.Atoi(val)
 			if v < min {
 				min = v
 			}
@@ -35,10 +31,7 @@ func p2(input string) int {
 	for _, line := range strings.Split(input, "\n") {
 		vals := make([]int, 0)
 		for _, val := range strings.Fields(line) {
-			v, err := strconv.Atoi(val)
-			if err != nil {
-				panic(err)
-			}
+			v := utils.Atoi(val)
 			vals = append(vals, v)
 		}
 		a, b := findDivisible(vals)

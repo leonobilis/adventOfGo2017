@@ -1,10 +1,10 @@
 package main
 
 import (
-	"testing"
 	"io/ioutil"
-	"path/filepath"
 	"os"
+	"path/filepath"
+	"testing"
 )
 
 func getInput() string {

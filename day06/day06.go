@@ -4,17 +4,13 @@ import (
 	"adventOfGo2017/utils"
 	"fmt"
 	"reflect"
-	"strconv"
 	"strings"
 )
 
 func parseInput(input string) []int {
 	banks := make([]int, 0)
 	for _, s := range strings.Fields(input) {
-		val, err := strconv.Atoi(s)
-		if err != nil {
-			panic(err)
-		}
+		val := utils.Atoi(s)
 		banks = append(banks, val)
 	}
 	return banks

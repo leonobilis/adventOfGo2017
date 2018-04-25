@@ -3,7 +3,6 @@ package main
 import (
 	"adventOfGo2017/utils"
 	"fmt"
-	"strconv"
 )
 
 const (
@@ -82,10 +81,7 @@ func gridValue(position pair, grid map[pair]int) int {
 }
 
 func main() {
-	input, err := strconv.Atoi(utils.GetInput(3))
-	if err != nil {
-		panic(err)
-	}
+	input := utils.Atoi(utils.GetInput(3))
 	fmt.Printf("Part 1: %v\n", p1(input))
 	fmt.Printf("Part 2: %v\n", p2(input))
 }

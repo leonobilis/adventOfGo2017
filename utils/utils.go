@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
 )
 
 func GetInput(day int) string {
@@ -14,6 +15,14 @@ func GetInput(day int) string {
 		panic(e)
 	}
 	return string(input)
+}
+
+func Atoi(a string) int {
+	i, err := strconv.Atoi(a)
+	if err != nil {
+		panic(err)
+	}
+	return i
 }
 
 type sortRunes []rune
