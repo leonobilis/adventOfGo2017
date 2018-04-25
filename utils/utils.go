@@ -25,6 +25,22 @@ func Atoi(a string) int {
 	return i
 }
 
+func MakeRange(min, max int) []int {
+	a := make([]int, max-min+1)
+	for i := range a {
+		a[i] = min + i
+	}
+	return a
+}
+
+func Reverse(numbers []int) []int {
+	newNumbers := make([]int, len(numbers))
+	for i, j := 0, len(numbers)-1; i <= j; i, j = i+1, j-1 {
+		newNumbers[i], newNumbers[j] = numbers[j], numbers[i]
+	}
+	return newNumbers
+}
+
 type sortRunes []rune
 
 func (s sortRunes) Less(i, j int) bool {
