@@ -17,6 +17,13 @@ func GetInput(day int) string {
 	return string(input)
 }
 
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
 func Atoi(a string) int {
 	i, err := strconv.Atoi(a)
 	if err != nil {

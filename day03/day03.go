@@ -14,13 +14,6 @@ const (
 
 var next = [4]int{UP, LEFT, DOWN, RIGHT}
 
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func p1(input int) int {
 	directionList := [4]int{0, 0, 0, 0}
 	if input > 1 {
@@ -39,7 +32,7 @@ func p1(input int) int {
 			}
 		}
 	}
-	return abs(directionList[RIGHT]-directionList[LEFT]) + abs(directionList[UP]-directionList[DOWN])
+	return utils.Abs(directionList[RIGHT]-directionList[LEFT]) + utils.Abs(directionList[UP]-directionList[DOWN])
 }
 
 type pair struct {
